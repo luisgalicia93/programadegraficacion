@@ -12,11 +12,15 @@ a) Elementos que debe cumplir el programa
 5. Preguntar el tipo de transformación que se va a realizar, si es una a la vez o varias. En ambos casos aplicar lo que corresponda, si son varias deben de cumplirse las propiedades de las transformaciones
 6. Dar como resultado final la aplicación de la transformación y/o transformaciones
 */
-#include<iostream>
+#include <iostream>
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
 using namespace std;
 int main()
 {
     cout<<"Programa de graficacion"<<endl;
+    getch();
 
     return 0;
 }
