@@ -18,8 +18,24 @@ a) Elementos que debe cumplir el programa
 #include<math.h>
 using namespace std;
 int main()
-{
+{   int puntos[100];
+    char orden=' ';
+    int cuantos_puntos;
     cout<<"Programa de graficacion"<<endl;
+    cout<<"ingrese la cantidad de puntos del poligono"<<endl;
+    cin>>cuantos_puntos;
+    cout<<"va a hacer en orden el ingreso de los punntos de ser asi ingrese (s) si no (n)"<<endl;
+    cin>>orden;
+    if((orden=='s')or(orden=='S'))
+    {
+        cout<<"los: "<<cuantos_puntos<<" puntos se ingresaran en orden "<<endl;
+    }
+    else
+    {
+        
+        cout<<"los: "<<cuantos_puntos<<" puntos se ingresaran en desorden "<<endl;
+    }
+
     getch();
 
     return 0;
