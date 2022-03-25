@@ -32,7 +32,7 @@ int main(){
 	//prueba de miniwin
 	/*miniwin::vredimensiona(200,200);
 	miniwin::linea(0,0,200,200);
-	refresca();*/
+	miniwin::refresca();*/
 
 
 cout<<"va a hacer en orden el ingreso de los punntos de ser asi ingrese (s) si no (n)"<<endl;
@@ -114,15 +114,20 @@ do{
 	cout<<"   4. Salir \n ";
 	cout<<"\nQue tranformada desea realizar (1-4)\n";
 	cin>>opcion;
-	
+	float escalamiento=0.0;
 	switch(opcion){
 		case 1: cout<<"------------Rotamiento--------------";
 		break;
 		
 		case 2: cout<<"------------Escalamiento--------------";
+				cout<<"ingrese el factor de escala"<<endl;
+				cin>>escalamiento;
+				cout<<"factor de escalamiento:"<<escalamiento<<endl;
 		break;
 		
 		case 3: cout<<"------------Traslacion--------------";
+		cout<<"ingrese desplazamiento en x"<<endl;
+	
 		break;
 		default: cout<<"Esa opcion no está en el menu, vuelva a elegir";
 	
