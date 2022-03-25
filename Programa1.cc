@@ -23,9 +23,15 @@ int main(){
 	int puntopivote = 0;
 	int pivote[1][2];
 	int numPunto = -1;
+	char orden=' ';
+	char opcionpuntopivote=' ';
 	cout<<"Programa de Transformaciones geometricas \n "; 
 	cout<<"En este programa puede rotar, escalar y trasladar";
 	cout<<"\nDigite el numero de puntos que desea graficar: "; cin>>filas;
+
+cout<<"va a hacer en orden el ingreso de los punntos de ser asi ingrese (s) si no (n)"<<endl;
+    cin>>orden;
+    
 
 	
 	//Rellenando la matriz	
@@ -35,6 +41,16 @@ int main(){
 			cin>>puntos_poligono[i][j];
 		}
 	} 
+
+	if((orden=='s')or(orden=='S'))
+    {
+        cout<<"los: "<<filas<<" puntos se ingresaron en orden "<<endl;
+    }
+    else
+    {
+        
+        cout<<"los: "<<filas<<" puntos se ingresaron en desorden "<<endl;
+    }
 	
 	cout<<"\nCoordenadas a tranformar\n\n";
 	
@@ -47,18 +63,33 @@ int main(){
 		}
 		cout<<"\n";
 	}
-	
-	cout<<"\n Cual sera el punto pivote?\n\n";
+
+	cout<<"el punto pivote es uno de los puntos del poligono? de ser asi ingrese (s) si no (n)"<<endl;
+    cin>>opcionpuntopivote;
+    
+	if((opcionpuntopivote=='s')or(opcionpuntopivote=='S'))
+    {
+        cout<<" el punto pivote se encuentra entre los puntos del poligono  "<<endl;
+		cout<<"\n Cual sera el punto pivote?\n\n";
 	cin>>puntopivote;
-	for(int i=0;i<filas;i++){
-		if(puntopivote > i+1){
-			cout<<"Ese punto no existe, elija otro...";
+	while(puntopivote>=filas)//correcion de la evaluacion de la existencia del punto pivote 
+	{
+		cout<<"Ese punto no existe, elija otro...";
 			cout<<"\n Cual sera el punto pivote?\n\n";
 		    cin>>puntopivote;
-		}
-   }
-	cout<<"("<<puntos_poligono[puntopivote][0]<<",";
+	}
+			cout<<"("<<puntos_poligono[puntopivote][0]<<",";
     cout<<puntos_poligono[puntopivote][1]<<")";
+		
+   }
+	
+       else
+    {
+        
+        cout<<"el punto pivote no esta dentro de los puntos del poligono "<<endl;
+    }
+	
+	
     
 int opcion = 0;
 do{
