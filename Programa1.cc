@@ -13,7 +13,7 @@ Luis Angel Galicia
 */
 #include<iostream>
 #include<conio.h>//prueba de modificacion
-
+//#include "miniwin.h"
 using namespace std;
 
 int main(){
@@ -28,6 +28,12 @@ int main(){
 	cout<<"Programa de Transformaciones geometricas \n "; 
 	cout<<"En este programa puede rotar, escalar y trasladar";
 	cout<<"\nDigite el numero de puntos que desea graficar: "; cin>>filas;
+
+	//prueba de miniwin
+	/*miniwin::vredimensiona(200,200);
+	miniwin::linea(0,0,200,200);
+	refresca();*/
+
 
 cout<<"va a hacer en orden el ingreso de los punntos de ser asi ingrese (s) si no (n)"<<endl;
     cin>>orden;
