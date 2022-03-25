@@ -12,7 +12,7 @@ Luis Angel Galicia
 6. Dar como resultado final la aplicación de la transformación y/o transformaciones
 */
 #include<iostream>
-#include<conio.h>
+#include<conio.h>//prueba de modificacion
 
 using namespace std;
 
