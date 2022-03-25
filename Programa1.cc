@@ -87,6 +87,14 @@ cout<<"va a hacer en orden el ingreso de los punntos de ser asi ingrese (s) si n
     {
         
         cout<<"el punto pivote no esta dentro de los puntos del poligono "<<endl;
+		cout<<"ingresar el punto pivote"<<endl;
+		for(int j=0;j<columnas;j++){
+			cout<<"Digite un numero ["<<filas<<"]["<<j<<"]: ";
+			cin>>puntos_poligono[filas][j];
+		}
+
+		cout<<"("<<puntos_poligono[filas][0]<<",";
+    cout<<puntos_poligono[filas][1]<<")";
     }
 	
 	
