@@ -1,2 +1,2 @@
-# programadegraficacion
-el programa de graficacion
+Documentacion
+250322 Listo programa 1
