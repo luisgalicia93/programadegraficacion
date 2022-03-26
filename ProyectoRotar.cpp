@@ -16,11 +16,12 @@ int main(){
 	int numPunto = -1;
 	char orden=' ';
 	char opcionpuntopivote=' ';
-	int radianes = 0 ;
+	float radianes = 0 ;
 	float angulo = 0.0;
 	float desplazamientox=0.0;
 	float desplazamientoy=0.0;
 	float escalamiento=1.0;
+	float coordenadaRotar[100][2];
 	cout<<"Programa de Transformaciones geometricas \n "; 
 	cout<<"En este programa puede rotar, escalar y trasladar";
 	cout<<"\nDigite el numero de puntos que desea graficar: "; cin>>filas;
@@ -122,15 +123,17 @@ do{
 	switch(opcion){//revisar opcion de rotamiento 
 		case 1: cout<<"------------Rotamiento--------------";
 		/**/
-		float angulotemp=0.0;
+		float angulotem;
+		angulotem=0.0;
 	cout<<"\nDigite los grados que rotaran los puntos:";
-	cin>>angulotemp;
-	angulo=angulo+angulotemp;//para acumular los angulos de rotamiento
+	cin>>angulotem;
+	angulo=angulo+angulotem;//para acumular los angulos de rotamiento
 	
 	
 		break;
 		
-		case 2: cout<<"------------Escalamiento--------------"<<endl;
+		case 2: 
+				cout<<"------------Escalamiento--------------"<<endl;
 				float es;
 				es=1.0;
 				cout<<"ingrese el factor de escala"<<endl;
@@ -192,9 +195,11 @@ if (angulo == 360 ){
 		cout<<"Ese angulo no existe, digite un angulo valido";
 		cin>>angulo;
 	} else{
-		cout<<"\nAngulo: "<<angulo<<"\n";
+		
+	}*/
+	/*cout<<"\nAngulo: "<<angulo<<"\n";
 		cout<<"Rotacion de "<<angulo<<" grados de "<<filas<<" puntos \n";
-	}
+
 	radianes = angulo * PI /180;
 		
 		for(int i=0;i<filas;i++){
@@ -215,13 +220,57 @@ if (angulo == 360 ){
 				
 			cout<<"("; cout<<rotar[i][j]<<")";
 		}
-		cout<<"\n";
-*/
+		cout<<"\n";*/
+		float R[100];
+		float rx=0.0;
+		float ry=0.0;
+		//aqui se hacen las rotaciones acumuladas de una sola vez
 
+/*for(int i=0;i<filas;i++)
+		{
+			for(int j=0;j<2;j++)
+			{
+				if(j%2==0)
+				{rx=puntos_poligono[i][j]-punto_pivote[0][j];}
+				else
+				{ry=puntos_poligono[i][j]-punto_pivote[0][j];}
+			}
+			R=
+		}*/
+		cout<<endl;
+		cout<<"rotacion"<<endl;
+		cout<<"el angulo acumulado para rotacion es "<<angulo<<endl;
+		radianes = (angulo * PI) /180;
+
+		
+		for(int i=0;i<filas;i++){
+			numPunto++;
+			cout<<numPunto;
+		for(int j=0;j<columnas;j++){
+			coordenadaRotar[i][0] = puntos_poligono[i][0] - punto_pivote[0][0]; // x
+			coordenadaRotar[i][1] = puntos_poligono[i][1] - punto_pivote[0][1]; // y
+
+			
+			if (j == 0){
+
+	
+				rotar[i][0] = (coordenadaRotar[i][0] * cos(radianes)) - (coordenadaRotar[i][1] * sin(radianes)) + punto_pivote[0][0];
+				
+			} 	else {
+							
+
+				rotar[i][1] = (coordenadaRotar[i][0] * sin(radianes)) + (coordenadaRotar[i][1] * cos(radianes)) + punto_pivote[0][1];
+
+			}
+				
+			cout<<"("; cout<<rotar[i][j]<<")";
+		}
+		cout<<"\n";
+		}
 
 //aqui se imprimen los puntos despues de todas las trasformaciones 
 
-		cout<<"los puntos despues de las trasformaciones"<<endl;
+		cout<<"los puntos despues de las trasformaciones de traslacion y escalamiento "<<endl;
 				for(int i=0;i<filas;i++){
 	        //numPunto++;
 			//cout<<numPunto;
